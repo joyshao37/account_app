@@ -1,0 +1,15 @@
+<h1>Home</h1>
+
+<% unless user_signed_in? %>
+
+<h3>Welcome to account app </h3>
+<h3>Please <%=link_to "login",new_user_session_path%> or 
+ <%=link_to "sign up",new_user_registration_path%> first </h3>
+<%else%>
+
+<%@accounts.each do |e|%>
+<%= e.category%>
+<%= e.cost%>
+</br>
+<%end%>
+<%end%>
